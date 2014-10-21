@@ -40,7 +40,7 @@ router.post('/feedback', function (req, res) {
             transporter.close();
             res.render('landing', {
                 title: 'title', 
-                message: 'Message Sent', 
+                message: 'Message sent thanks for taking time filling out the form', 
                 errors: {}
             });
         });
