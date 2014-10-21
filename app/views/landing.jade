@@ -1,0 +1,18 @@
+doctype
+html
+    head
+        h1 Hello
+    body
+        .container
+            form#feedback(action="feedback" method="post" name="feedback" enctype="application/x-www-form-urlendcoded")
+                .row
+                    label Email
+                    br
+                    input#email(class ="input" name="email" type="text" value="" size="30")
+                .row
+                    label Suggestions
+                    br
+                    textarea#suggestion(class ="input" name="suggestion" rows="7" cols="30")
+
+                input#submit_button(type ="submit" value="Send email")
+        

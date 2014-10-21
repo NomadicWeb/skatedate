@@ -1,8 +1,12 @@
 // ====================================================
-// EXPRESS
+// Global Variables
 // ====================================================
-var express    = require('express');
-var app        = express();
+var express    = require('express'),
+    app        = express(),
+    path       = require('path'),
+    expressValidator = require('express-validator'),
+    logger     = require('express-logger');
+
 
 // ====================================================
 // APP CONFIG
@@ -11,10 +15,13 @@ var conf       = require('./app/config/conf.js');
 var bodyParser = require('body-parser');
 
 app.set('port', conf.port);
+app.set('views' , path.join(__dirname, 'app/views'));
+app.set('view engine', 'jade');
+
+app.use(logger({path: "./logfile.txt"}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-
-
+app.use(expressValidator());
 // ====================================================
 // MONGODB
 // ====================================================
