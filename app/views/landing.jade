@@ -1,7 +1,19 @@
 doctype
 html
+  - function isObjectEmpty(obj){
+  -   var name;
+  -   for(name in obj){
+  -     return false;
+  -   }
+  -  return true;
+  - }
   head
     h1 Hello
+  - if(isObjectEmpty(errors) == false)
+    p.errorMessage= "The following errors occurred:"
+    ul
+      - each error in errors
+        li= error.msg
   body
     .container
       form#feedback(action="feedback" method="post" name="feedback" enctype="application/x-www-form-urlendcoded")
