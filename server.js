@@ -2,8 +2,8 @@
 // Global Variables
 // ====================================================
 var express    = require('express'),
+    livereload = require('express-livereload'),
     app        = express(),
-    path       = require('path'),
     expressValidator = require('express-validator'),
     logger     = require('express-logger');
 
@@ -15,9 +15,10 @@ var conf       = require('./app/config/conf.js');
 var bodyParser = require('body-parser');
 
 app.set('port', conf.port);
-app.set('views' , path.join(__dirname, 'app/views'));
 app.set('view engine', 'jade');
+app.set('views', __dirname + '/app/views');
 
+app.use(express.static(__dirname + '/app/assets/'));
 app.use(logger({path: "./logfile.txt"}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -26,7 +27,7 @@ app.use(expressValidator());
 // MONGODB
 // ====================================================
 var mongoose   = require('mongoose');
-mongoose.connect(conf.mongodburl);
+//mongoose.connect(conf.mongodburl);
 
 
 // ====================================================
@@ -44,6 +45,8 @@ module.exports = app;
 // ====================================================
 // SERVER
 // ====================================================
-app.listen(app.get('port'), function(){
-      console.log('Listening on ' + app.get('port'));
+livereload(app, {watchDir: process.cwd() + "/app/"});
+var port = process.env.PORT || 5000;
+app.listen(port, function(){
+      console.log('Listening on ' + port);
 });

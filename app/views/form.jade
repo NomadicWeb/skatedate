@@ -1,0 +1,25 @@
+extends layout
+
+block content
+  - function isObjectEmpty(obj){
+  -   var name;
+  -   for(name in obj){
+  -     return false;
+  -   }
+  -   return true;
+  - }
+
+  - if(isObjectEmpty(errors) == false)
+    p.errorMessage= "The following errors occurred: "
+    ul
+      - each error in errors
+          li=error.msg
+  .col-md-7.col-md-offset-3
+    form#feedback(action="" method="post" name="feedback" enctype="application/x-www-form-urlendcoded")
+      .row
+        input#email(class ="input" name="email" type="text" value="" size="40" placeholder="Email Address")
+      .row
+        textarea#suggestion(class ="input" name="suggestion" rows="8" cols="80" placeholder="Suggestions")
+      .row
+        input.btn.btn-default#submit_button(type ="submit" value="Send email")
+    p #{message}
