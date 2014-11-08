@@ -4,7 +4,7 @@ var express = require('express'),
     smtpTransport = require('nodemailer-smtp-transport');
 
 router.get('/', function (req, res) {
-    res.render('form', {message: '', errors: {} });
+    res.render('submission-form', {message: '', errors: {} });
     console.log("form is rendered");
 });
 
