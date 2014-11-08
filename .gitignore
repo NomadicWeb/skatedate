@@ -11,3 +11,4 @@ node_modules
 .lock-wscript
 app/config/conf.js
 logfile.txt
+npm-debug.log
