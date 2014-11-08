@@ -3,7 +3,7 @@
 skatedate
 ========================================================
 
-We are making a service that will help skateboarders. The name sucks and it's not anywhere near done yet. Oh well.
+We are making a service that will help skateboarders.
 
 
 ========================================================
