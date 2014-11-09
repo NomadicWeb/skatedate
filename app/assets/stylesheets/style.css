@@ -183,9 +183,8 @@ td,
 th {
   padding: 0;
 }
-html * {
-  border: 1px solid;
-}
+/* html * */
+/*   b() */
 #wrapper {
   margin-top: 60px;
 }
@@ -264,4 +263,17 @@ html * {
 }
 #dotted-bracket {
   top: 125px;
+}
+#submit_button {
+  margin-top: 5%;
+}
+#nav {
+  margin-left: 40%;
+}
+#right-arrow {
+  color: #222;
+  margin-left: 10%;
+}
+#left-arrow {
+  color: #222;
 }
