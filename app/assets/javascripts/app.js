@@ -57,9 +57,10 @@ $(function() {
 
 /* gif ajax loads stuff */
 $(function() {
-    var fadeIn  = 1500;
+    var fadeIn  = 1000;
     var fadeOut = 600;
-    var frame1 = $('#frame1');
+    var frame1  = $('#frame1');
+
     frame1.fadeIn(fadeIn);
     frame1.fadeOut(fadeOut, function(){
         loadContent("/gif-part-two", function(){

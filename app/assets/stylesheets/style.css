@@ -196,8 +196,7 @@ th {
 /* gif-part-*.jade */
 #frame1,
 #frame2,
-#frame3,
-#introduction {
+#frame3 {
   display: none;
 }
 #frame2 img {
