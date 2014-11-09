@@ -20,10 +20,11 @@ function linkLoader(theEl){
   });
 }
 
-function loadContent(href, func){
+function loadContent(href, bfunc, afunc){
     $mainContent.fadeOut(200, function(){
         $mainContent.hide().load(href + " #switch-content", function(){
-            $mainContent.fadeIn(200, func)
+            bfunc(); // run before we load in content
+            $mainContent.fadeIn(200, afunc);
             console.log("AJAX-in complete");
          });
       $("nav a").removeClass("current");
@@ -60,6 +61,9 @@ $(function() {
     var fadeIn  = 1000;
     var fadeOut = 600;
     var frame1  = $('#frame1');
+    
+    var logo  = $('#fixed-logo');
+    logo.addClass('hidden');
 
     frame1.fadeIn(fadeIn);
     frame1.fadeOut(fadeOut, function(){
@@ -71,8 +75,15 @@ $(function() {
                     var frame3 = $('#frame3');
                     frame3.fadeIn(fadeIn);
                     frame3.fadeOut(fadeOut, function(){
-                        loadContent("/intro", function(){
-                            $('#introduction').fadeIn(fadeIn);
+                        loadContent("/intro", 
+                            function(){
+                              $('#introduction').addClass('hidden');
+                            }, 
+                            function(){
+                            setTimeout(function(){
+                                $('#introduction').removeClass('hidden').hide().fadeIn(2000);
+                            }, fadeIn);
+                            logo.removeClass('hidden').hide().fadeIn(fadeIn);
                        });
                     });
                 });
