@@ -189,20 +189,19 @@ html * {
 #wrapper {
   margin-top: 60px;
 }
+@media (max-width: 320px) {
+  #wrapper {
+    margin-top: 40%;
+  }
+}
+/* gif-part-*.jade */
 #frame2 img {
   margin-left: 30px;
 }
 #frame3 img {
   margin-left: 80px;
 }
-@media (max-width: 320px) {
-  #wrapper {
-    margin-top: 40%;
-  }
-}
-img:hover {
-  opacity: 0.7;
-}
+/* introduction.jade */
 #introduction p {
   margin-top: 15%;
   font-size: 16pt;
@@ -213,44 +212,56 @@ img:hover {
   font-family: "Hiragino Kaku Gothic Standard";
   font-size: 20pt;
 }
-#nomadCol {
-  margin-top: 10%;
+/* about-us.jade */
+#mugshots div,
+#mugshots div h3,
+#mugshots div p {
+  position: absolute;
 }
-#paddyCol {
-  margin-top: 20%;
+#luke {
+  left: 200px;
 }
-#textCol {
-  margin-top: 10%;
+#luke h3 {
+  width: 140px;
+  left: 200px;
 }
-#nameCol {
-  margin-top: 18%;
+#paddy-is-special {
+  top: 100px;
 }
-#martinRow {
-  margin-top: 60%;
+#paddy-is-special h3 {
+  top: -8px;
+  right: 220px;
 }
-#textContainer p {
-  font-size: 13pt;
-  font-family: "Helvetica Neue Light";
+#paddy-is-special p {
+  width: 200px;
+  top: 40px;
+  right: 175px;
 }
-#textContainer h2 {
-  font-family: "Hiragino Kaku Gothic Standard";
-  font-weight: 900;
+#martin {
+  top: 200px;
+  left: 200px;
 }
-#textContainer h4 {
-  font-family: "Hiragino Kaku Gothic Standard";
-  font-weight: 900;
+#martin h3 {
+  width: 200px;
+  top: 150px;
+  left: 190px;
 }
-#textContainer span {
-  font-weight: 900;
-  font-family: "Hiragino Kaku Gothic Standard";
-  font-size: 20pt;
+@media (min-width: 768px) {
+  #dotted-bracket {
+    right: 30px;
+  }
 }
-#feedback {
-  margin-top: 20%;
+@media (min-width: 1280px) {
+  #dotted-bracket {
+    right: 115px;
+  }
+  #about-text {
+    right: 100px;
+  }
 }
-#suggestion {
-  margin-top: 5%;
+#about-text #text {
+  margin-top: 80px;
 }
-#submit_button {
-  margin-top: 5%;
+#dotted-bracket {
+  top: 125px;
 }

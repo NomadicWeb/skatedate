@@ -1,20 +1,41 @@
 extends layout
 
 block content
-  .col-md-10.col-md-offset-1
+  .col-md-10.col-md-offset-2
     .row
-      .col-md-5
-        .row
-          img.img-responsive(src='/images/luke-mugshot.jpg')
-          img.img-responsive(src='/images/paddy-mugshot.jpg')
-          img.img-responsive(src='/images/martin-mugshot.jpg')
-      .col-md-2
-        img.img-responsive(src='/images/dotted-bracket.jpg')
-      .col-md-5
-        h2 Nomadic Web
-        p 
-          | Martin O' Grady and Luke Murphy, two programmers from Dublin, Ireland who
-          | travelled to Palestine to build skate parks as part of the SkatePAL charity. They
-          | did this from June throughout August. Since then they have been travelling around 
-          | South America and are hoping to use whereswall.ie to meet local skateboarders 
-          | and skate the spots their cities have to offer.
+      .col-md-6.hidden-sm.hidden-xs
+        .row#mugshots
+          #luke
+            h3 Luke Murphy
+            img#luke-mugshot.img-responsive(src='/images/luke-mugshot.png')
+          #paddy-is-special
+            h3 Paddhuiy
+            p  I did an idea and design
+            img#paddy-mugshot.img-responsive(src='/images/paddy-mugshot.png')
+          #martin
+            h3 Martin O' Grady
+            img#martin-mugshot.img-responsive(src='/images/martin-mugshot.png')
+      .col-md-2.hidden-sm.hidden-xs#dotted-bracket
+        img(src='/images/dotted-bracket.png')
+      .col-md-4#about-text
+        #text
+          h2 Nomadic Web
+          p 
+            | Martin O' Grady and Luke Murphy, two programmers from Dublin, Ireland who
+            | travelled to Palestine to build skate parks as part of the SkatePAL charity. They
+            | did this from June throughout August. Since then they have been travelling around 
+            | South America and are hoping to use whereswall.ie to meet local skateboarders 
+            | and skate the spots their cities have to offer.
+
+      .col-sm-12.hidden-md.hidden-lg
+        .col-sm-4
+          h3 Luke Murphy
+          img#luke-mugshot.img-responsive(src='/images/luke-mugshot.png')
+
+        .col-sm-4
+          h3 Paddhuiy
+          img#paddy-mugshot.img-responsive(src='/images/paddy-mugshot.png')
+
+        .col-sm-4
+          h3 Martin O' Grady
+          img#martin-mugshot.img-responsive(src='/images/martin-mugshot.png')
