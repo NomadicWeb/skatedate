@@ -186,6 +186,15 @@ th {
 html * {
   border: 1px solid;
 }
+#wrapper {
+  margin-top: 60px;
+}
+#frame2 img {
+  margin-left: 30px;
+}
+#frame3 img {
+  margin-left: 80px;
+}
 @media (max-width: 320px) {
   #wrapper {
     margin-top: 40%;
@@ -194,21 +203,12 @@ html * {
 img:hover {
   opacity: 0.7;
 }
-.col-md-6 #firstWallie {
-  margin-right: 40px;
-}
-#secondWallie .col-md-6 {
-  margin-left: 200px;
-}
-#thirdWallie .col-md-6 {
-  margin-left: 300px;
-}
-#introContainer p {
+#introduction p {
   margin-top: 15%;
   font-size: 16pt;
   font-family: "Helvetica Neue Light";
 }
-#introContainer span {
+#introduction span {
   font-weight: 900;
   font-family: "Hiragino Kaku Gothic Standard";
   font-size: 20pt;
