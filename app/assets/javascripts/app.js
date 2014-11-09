@@ -57,23 +57,25 @@ $(function() {
 
 /* gif ajax loads stuff */
 $(function() {
+    var fadeIn  = 1500;
+    var fadeOut = 600;
     var frame1 = $('#frame1');
-    frame1.fadeIn(2000);
-    frame1.fadeOut(1000, function(){
+    frame1.fadeIn(fadeIn);
+    frame1.fadeOut(fadeOut, function(){
         loadContent("/gif-part-two", function(){
             var frame2 = $('#frame2');
-            frame2.fadeIn(2000);
-            frame2.fadeOut(1000, function(){
+            frame2.fadeIn(fadeIn);
+            frame2.fadeOut(fadeOut, function(){
                 loadContent("/gif-part-three", function(){
                     var frame3 = $('#frame3');
-                    frame3.fadeIn(2000);
-                    frame3.fadeOut(1000, function(){
+                    frame3.fadeIn(fadeIn);
+                    frame3.fadeOut(fadeOut, function(){
                         loadContent("/intro", function(){
-                            console.log("Finished gif stuff");
+                            $('#introduction').fadeIn(fadeIn);
                        });
+                    });
                 });
             });
         });
     });
-  });
 });
