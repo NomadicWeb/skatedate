@@ -1,27 +1,8 @@
-$(function() {
-    var frame1 = $('#frame1');
-    var frame2 = $('#frame2');
-    var frame3 = $('#frame3');
-
-    fadeInFadeOut(frame1, {fadeInTime: 700, fadeOutTime: 600});
-});
-
-function fadeInFadeOut(el, opts){
-    setTimeout(function(){
-         el.css('visibility','visible').hide().fadeIn('slow', function(){
-           setTimeout(function(){el.fadeOut("slow");}, opts['fadeOutTime']);
-         });
-    }, opts['fadeInTime']);
-}
-
-
-/* code from nomadic.web.github.io */
 $(window).bind("popstate", function() {
-  var link = location.pathname.replace(/^.*[\\/]/, ""); // get filename only
+  var link = location.pathname.replace(/^.*[\\/]/, "");
   loadContent(link);
 });
 
-// set up some variables
 var $mainContent = $("#switch-content"),
     $pageWrap    = $(".container"),
     baseHeight   = 0,
@@ -30,6 +11,32 @@ var $mainContent = $("#switch-content"),
 $pageWrap.height($pageWrap.height());
 baseHeight = $pageWrap.height() - $mainContent.height();
 
+function linkLoader(theEl){
+  $(theEl).delegate("a", "click", function(e) {
+    e.preventDefault();
+    var _href = $(this).attr("href");
+    history.pushState(null, null, _href);
+    loadContent(_href);
+  });
+}
+
+function loadContent(href, func){
+    $mainContent.fadeOut(200, function(){
+        $mainContent.hide().load(href + " #switch-content", function(){
+            $mainContent.fadeIn(200, func)
+        });
+    });
+}
+
+function isObjectEmpty(obj){
+    var name;
+    for(name in obj){
+        return false;
+    }
+    return true
+}
+
+/* navigation link ajax stuff */
 $(function() {
   if (Modernizr.history){
     $("#nav").delegate("a", "click", function(e) {
@@ -45,38 +52,25 @@ $(function() {
   }
 });
 
-function linkLoader(theEl){
-  $(theEl).delegate("a", "click", function(e) {
-    e.preventDefault();
-    console.log("Hijacking the click event outside the menu!");
-    var _href = $(this).attr("href");
-    history.pushState(null, null, _href);
-    loadContent(_href);
-  });
-}
-
-function loadContent(href){
-  console.log("Attempting to AJAX-in some content");
-  $mainContent
-    .fadeOut(200, function(){
-      console.log("Just faded out the .wrapper");
-      $mainContent
-        .hide()
-        .load(href + " #switch-content", function(){
-          $mainContent.fadeIn(200, function(){
-            console.log("AJAX-in complete");
-         });
-      
-      $("nav a").removeClass("current");
-      $("nav a[href$='" + href + "']").addClass("current");
+/* gif ajax loads stuff */
+$(function() {
+    var frame1 = $('#frame1');
+    frame1.fadeIn(2000);
+    frame1.fadeOut(1000, function(){
+        loadContent("/gif-part-two", function(){
+            var frame2 = $('#frame2');
+            frame2.fadeIn(2000);
+            frame2.fadeOut(1000, function(){
+                loadContent("/gif-part-three", function(){
+                    var frame3 = $('#frame3');
+                    frame3.fadeIn(2000);
+                    frame3.fadeOut(1000, function(){
+                        loadContent("/intro", function(){
+                            console.log("Finished gif stuff");
+                       });
+                });
+            });
+        });
     });
   });
-}
-
-function isObjectEmpty(obj){
-    var name;
-    for(name in obj){
-        return false;
-    }
-    return true
-}
+});
