@@ -24,7 +24,10 @@ function loadContent(href, func){
     $mainContent.fadeOut(200, function(){
         $mainContent.hide().load(href + " #switch-content", function(){
             $mainContent.fadeIn(200, func)
-        });
+            console.log("AJAX-in complete");
+         });
+      $("nav a").removeClass("current");
+      $("nav a[href$='" + href + "']").addClass("current");
     });
 }
 
