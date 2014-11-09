@@ -11,10 +11,9 @@ var express    = require('express'),
 // ====================================================
 // APP CONFIG
 // ====================================================
-var conf       = require('./app/config/conf.js');
+//var conf       = require('./app/config/conf.example.js');
 var bodyParser = require('body-parser');
 
-app.set('port', conf.port);
 app.set('view engine', 'jade');
 app.set('views', __dirname + '/app/views');
 
@@ -23,11 +22,11 @@ app.use(logger({path: "./logfile.txt"}));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(expressValidator());
+
 // ====================================================
 // MONGODB
 // ====================================================
-var mongoose   = require('mongoose');
-//mongoose.connect(conf.mongodburl);
+//var mongoose   = require('mongoose');
 
 
 // ====================================================
