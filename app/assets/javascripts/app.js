@@ -1,3 +1,21 @@
+$(function() {
+    var frame1 = $('#frame1');
+    var frame2 = $('#frame2');
+    var frame3 = $('#frame3');
+
+    fadeInFadeOut(frame1, {fadeInTime: 700, fadeOutTime: 600});
+});
+
+function fadeInFadeOut(el, opts){
+    setTimeout(function(){
+         el.css('visibility','visible').hide().fadeIn('slow', function(){
+           setTimeout(function(){el.fadeOut("slow");}, opts['fadeOutTime']);
+         });
+    }, opts['fadeInTime']);
+}
+
+
+/* code from nomadic.web.github.io */
 $(window).bind("popstate", function() {
   var link = location.pathname.replace(/^.*[\\/]/, ""); // get filename only
   loadContent(link);
