@@ -22,7 +22,7 @@ $(window).bind("popstate", function() {
 });
 
 // set up some variables
-var $mainContent = $(".switch-content"),
+var $mainContent = $("#switch-content"),
     $pageWrap    = $(".container"),
     baseHeight   = 0,
     $el;
@@ -32,7 +32,7 @@ baseHeight = $pageWrap.height() - $mainContent.height();
 
 $(function() {
   if (Modernizr.history){
-    $(".menu").delegate("a", "click", function(e) {
+    $("#nav").delegate("a", "click", function(e) {
       e.preventDefault();
       console.log("Hijacking the click event!");
       var _href = $(this).attr("href");
@@ -62,13 +62,9 @@ function loadContent(href){
       console.log("Just faded out the .wrapper");
       $mainContent
         .hide()
-        .load(href + " .switch-content", function(){
+        .load(href + " #switch-content", function(){
           $mainContent.fadeIn(200, function(){
             console.log("AJAX-in complete");
-
-            // should really only do this on
-            // the index page - @todo
-            rotateTextSetup();
          });
       
       $("nav a").removeClass("current");
