@@ -58,8 +58,3 @@ function loadContent(href){
     });
   });
 }
-
-function rotateTextSetup(){
-  return $("#build-rotator").Morphext({ animation: "fadeIn", separator: ",", speed: 3500 });
-}
-rotateTextSetup();
