@@ -1,31 +1,21 @@
 doctype
 html
   head
-    title NomadicWeb - #{title}
-
-    // modernizr, so all the web cool kids think
-    // I am cool too (also, it's useful)
+    title whereswall.ie - #{title}
     script(src="/javascripts/modernizr-custom.js")
 
     // stylesheets
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
-    link(rel='stylesheet', href='/stylesheets/bootstrap-theme.min.css')
-    link(rel='stylesheet', href='/stylesheets/morphext.css')
-    link(rel='stylesheet', href='/stylesheets/animate.css')
 
     // live-reload
     != LRScript
   body
     .container
-      .col-md-10.col-md-offset-1.wrapper
-        .main
-          // switchable content
-          .switch-content
-            block content
+      .col-md-10.wrapper
+        block content
 
-        // javascripts
-        script(src="/javascripts/jquery.js")
-        script(src="/javascripts/bootstrap.min.js")
-        script(src="/javascripts/morphext.min.js")
-        script(src="/javascripts/app.js")
+    // javascripts
+    script(src="/javascripts/jquery.js")
+    script(src="/javascripts/bootstrap.min.js")
+    script(src="/javascripts/app.js")
