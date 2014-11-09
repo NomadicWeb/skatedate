@@ -1,11 +1,12 @@
 extends layout
 
 block content
-  - if(isObjectEmpty(errors) == false)
-      p.errorMessage= "The following errors occurred: "
-      ul
-        - each error in errors
-          li=error.msg
+  // @todo - make this work
+  // - if(isObjectEmpty(errors) == false)
+  //   p.errorMessage= "The following errors occurred: "
+  //     ul
+  //       - each error in errors
+  //         li=error.msg
 
   .col-md-10.col-md-offset-1
     .col-md-8.col-md-offset-2.col-sm-8.col-sm-offset-2
