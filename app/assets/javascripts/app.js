@@ -23,7 +23,9 @@ function linkLoader(theEl){
 function loadContent(href, bfunc, afunc){
     $mainContent.fadeOut(200, function(){
         $mainContent.hide().load(href + " #switch-content", function(){
-            bfunc(); // run before we load in content
+            try{ bfunc(); }catch(err){
+              //pass
+            }
             $mainContent.fadeIn(200, afunc);
             console.log("AJAX-in complete");
          });
