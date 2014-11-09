@@ -183,9 +183,6 @@ td,
 th {
   padding: 0;
 }
-html * {
-  border: 1px solid;
-}
 #wrapper {
   margin-top: 60px;
 }
@@ -286,8 +283,8 @@ html * {
 /* fixed logo */
 #fixed-logo {
   position: absolute;
-  top: 480px;
   left: 10px;
+  bottom: 10px;
   right: 0;
 }
 #fixed-logo img {
