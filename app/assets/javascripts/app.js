@@ -24,6 +24,10 @@ function set_menu_icon(pname){
     if(pname === "/"){
         $("#fixed-nav a[href='/intro'] i").removeClass('fa-circle-o').addClass('fa-circle');
     }else{
+        if(pname != "/form"){
+            $("#fixed-nav a[href='/form'] i").removeClass('fa-circle').addClass('fa-circle-o');
+        }        
+
         // set the 'fill' class
         var item = $("#fixed-nav a[href='"+ pname + "'] i");
         item.removeClass('fa-circle-o').addClass('fa-circle');
