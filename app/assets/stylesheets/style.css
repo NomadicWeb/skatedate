@@ -315,13 +315,6 @@ h5 {
 #nav {
   margin-left: 40%;
 }
-#right-arrow {
-  color: #222;
-  margin-left: 10%;
-}
-#left-arrow {
-  color: #222;
-}
 #about-us-responsive div h3,
 #about-us-responsive div img {
   text-align: center;
@@ -345,7 +338,7 @@ h5 {
   z-index: -1;
   width: 160px;
   position: absolute;
-  left: 10px;
+  left: 25px;
   bottom: 10px;
   right: 0;
 }
@@ -381,4 +374,23 @@ h5 {
 #help-wrapper,
 #form-wrapper {
   margin-top: 5%;
+}
+#errorMessage {
+  color: #e81518;
+  font-weight: 200;
+  margin-left: 27%;
+  font-family: "Helvetica Neue Light";
+}
+#successMessage {
+  margin-left: 20%;
+  font-weight: 600;
+  font-family: "Helvetica Neue Light";
+  color: #15e8a2;
+}
+/* menu arrows */
+#right-arrow {
+  margin-left: 5px;
+}
+#left-arrow {
+  margin-left: 5px;
 }

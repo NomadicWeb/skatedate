@@ -20,10 +20,27 @@ function linkLoader(theEl){
   });
 }
 
+function set_menu_icon(pname){
+    if(pname === "/"){
+        $("#fixed-nav a[href='/intro'] i").removeClass('fa-circle-o').addClass('fa-circle');
+    }else{
+        // set the 'fill' class
+        var item = $("#fixed-nav a[href='"+ pname + "'] i");
+        item.removeClass('fa-circle-o').addClass('fa-circle');
+
+        // remove 'fill' class from the others
+        var others = $("#fixed-nav a[href!='"+ pname + "'] i");
+        for(var i = 0; i < others.length-1; i++){
+            $(others[i]).removeClass('fa-circle').addClass('fa-circle-o');
+        }
+    }
+}
+
 function loadContent(href, bfunc, afunc){
     mainContent.fadeOut(200, function(){
         mainContent.hide().load(href + " #switch-content", function(){
             try{ bfunc(); }catch(err){}
+            set_menu_icon(window.location.pathname);
             mainContent.fadeIn(200, afunc);
          });
     });
@@ -49,6 +66,10 @@ $(function() {
         logo.hide();
         logo.addClass('hidden');
 
+        var menu  = $('#fixed-nav');
+        menu.hide();
+        menu.addClass('hidden');
+
         frame1.fadeIn(fadeIn);
         frame1.fadeOut(fadeOut, function(){
             loadContent("/gif-part-two", function(){
@@ -67,6 +88,7 @@ $(function() {
                                 setTimeout(function(){
                                     $('#introduction').removeClass('hidden').hide().fadeIn(2000);
                                 }, fadeIn);
+                                menu.removeClass('hidden').hide().fadeIn(fadeIn);
                                 logo.removeClass('hidden').hide().fadeIn(fadeIn);
                            });
                         });

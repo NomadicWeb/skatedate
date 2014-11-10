@@ -30,8 +30,9 @@ html
             img.img-responsive(src='/images/logo-plus-text.png')
 
     #fixed-nav
+      i.fa.fa-angle-double-left#left-arrow
       a(href='/intro', onclick="linkLoader('#fixed-nav')")
-        i.fa.fa-circle-o
+        i.fa.fa-circle
       a(href='/about-us', onclick="linkLoader('#fixed-nav')")
         i.fa.fa-circle-o
       a(href='/why', onclick="linkLoader('#fixed-nav')")
@@ -44,6 +45,7 @@ html
         i.fa.fa-circle-o
       a(href='/form', onclick="linkLoader('#fixed-nav')")
         i.fa.fa-circle-o
+      i.fa.fa-angle-double-right#right-arrow
           
     #fixed-logo.hidden-xs.hidden
       a(href='/')
