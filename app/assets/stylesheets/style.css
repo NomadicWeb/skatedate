@@ -183,6 +183,11 @@ td,
 th {
   padding: 0;
 }
+body * {
+  font-family: "Helvetica Neue Light";
+  line-height: 1.4em;
+  font-size: 12pt;
+}
 #wrapper {
   margin-top: 60px;
 }
@@ -226,29 +231,33 @@ th {
   left: 200px;
 }
 #luke h3 {
+  font-size: 12pt;
   width: 140px;
-  left: 200px;
+  left: 180px;
 }
 #paddy-is-special {
   top: 100px;
 }
 #paddy-is-special h3 {
+  font-size: 12pt;
   top: -8px;
-  right: 220px;
+  right: 200px;
 }
 #paddy-is-special p {
+  font-size: 10pt;
   width: 200px;
-  top: 40px;
-  right: 175px;
+  top: 29px;
+  right: 168px;
 }
 #martin {
   top: 200px;
   left: 200px;
 }
 #martin h3 {
+  font-size: 12pt;
   width: 200px;
   top: 150px;
-  left: 190px;
+  left: 180px;
 }
 @media (min-width: 768px) {
   #dotted-bracket {
@@ -264,7 +273,12 @@ th {
   }
 }
 #about-text #text {
+  width: 320px;
   margin-top: 80px;
+}
+#about-text #text {
+  position: relative;
+  right: 70px;
 }
 #dotted-bracket {
   top: 125px;
