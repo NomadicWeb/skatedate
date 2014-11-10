@@ -197,6 +197,7 @@ body * {
   font-family: "Helvetica Neue Light";
   line-height: 1.4em;
   font-size: 12pt;
+  border: 1px solid;
 }
 h1,
 h2,
@@ -331,6 +332,7 @@ h5 {
 /* fixed logo */
 #fixed-logo {
   z-index: -1;
+  width: 160px;
   position: absolute;
   left: 10px;
   bottom: 10px;

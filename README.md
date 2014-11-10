@@ -10,7 +10,7 @@ We are making a service that will help skateboarders.
   - fixed menu bar
   - form functionality
   - fix martin shit quality photo
-  - vertically center all the text correctly
+  - vertically center all the text correctly - DONE -
 
 ========================================================
 Getting started with the repository
