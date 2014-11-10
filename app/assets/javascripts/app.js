@@ -3,13 +3,13 @@ $(window).bind("popstate", function() {
   loadContent(link);
 });
 
-var $mainContent = $("#switch-content"),
-    $pageWrap    = $(".container"),
+var mainContent = $("#switch-content"),
+    pageWrap    = $(".container"),
     baseHeight   = 0,
-    $el;
+    el;
 
-$pageWrap.height($pageWrap.height());
-baseHeight = $pageWrap.height() - $mainContent.height();
+pageWrap.height(pageWrap.height());
+baseHeight = pageWrap.height() - mainContent.height();
 
 function linkLoader(theEl){
   $(theEl).delegate("a", "click", function(e) {
@@ -21,16 +21,11 @@ function linkLoader(theEl){
 }
 
 function loadContent(href, bfunc, afunc){
-    $mainContent.fadeOut(200, function(){
-        $mainContent.hide().load(href + " #switch-content", function(){
-            try{ bfunc(); }catch(err){
-              //pass
-            }
-            $mainContent.fadeIn(200, afunc);
-            console.log("AJAX-in complete");
+    mainContent.fadeOut(200, function(){
+        mainContent.hide().load(href + " #switch-content", function(){
+            try{ bfunc(); }catch(err){}
+            mainContent.fadeIn(200, afunc);
          });
-      $("nav a").removeClass("current");
-      $("nav a[href$='" + href + "']").addClass("current");
     });
 }
 
@@ -42,23 +37,6 @@ function isObjectEmpty(obj){
     return true
 }
 
-/* navigation link ajax stuff */
-$(function() {
-  if (Modernizr.history){
-    $("#nav").delegate("a", "click", function(e) {
-      e.preventDefault();
-      console.log("Hijacking the click event!");
-      var _href = $(this).attr("href");
-      history.pushState(null, null, _href);
-      loadContent(_href);
-    });
-
-  }else{
-    console.log("Modernizr.history not supported!");
-  }
-});
-
-/* gif ajax loads stuff */
 $(function() {
     var pathname = window.location.pathname;
     if( pathname != "/"){$('#fixed-logo').removeClass("hidden");}
