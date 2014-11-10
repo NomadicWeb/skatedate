@@ -358,8 +358,8 @@ h5 {
 #xs-logo img {
   margin-top: 30px;
   max-height: 130px;
-  max-width: 130px;
   margin-left: auto;
+  max-width: 130px;
   margin-right: auto;
 }
 /* submission-form.jade */
@@ -403,4 +403,20 @@ h5 {
 }
 #left-arrow {
   margin-left: 5px;
+}
+@media (max-width: 600px) {
+  #fixed-xs-menu {
+    margin-left: 30%;
+  }
+  #fixed-xs-menu a {
+    margin-left: 5px;
+  }
+}
+@media (max-width: 320px) {
+  #fixed-xs-menu {
+    margin-left: 6%;
+  }
+  #fixed-xs-menu a {
+    margin-left: 5px;
+  }
 }
