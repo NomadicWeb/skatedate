@@ -1,10 +1,14 @@
 ========================================================
-[![Gitter](https://badges.gitter.im/Join Chat.svg)](https://gitter.im/NomadicWeb/skatedate?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
-skatedate
+whereswall.ie
 ========================================================
-
 We are making a service that will help skateboarders.
 
+========================================================
+@todo
+========================================================
+  - image preloading
+  - fixed menu bar
+  - form functionality
 
 ========================================================
 Getting started with the repository
