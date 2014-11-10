@@ -97,9 +97,17 @@ h1, h2, h3, h4, h5
   #about-text
     right 100px
 
-#about-text #text
-  width      320px
-  margin-top 80px
+// at 1024px, get these styles
+@media (min-width: 1024px)
+  #about-text #text
+    width 320px
+    position relative
+    top   60px
+    right 70px
+
+@media (max-width: 768px)
+  #about-text #text
+    right 0 !important
 
 #about-text #text a
   color black
@@ -109,10 +117,6 @@ h1, h2, h3, h4, h5
 
 #about-text #text a:hover
   border-bottom-color #020405
-
-#about-text #text
-  position relative
-  right 70px
 
 #about-text #text h2
   margin 0
