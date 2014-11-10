@@ -11,12 +11,12 @@ var mainContent = $("#switch-content"),
 pageWrap.height(pageWrap.height());
 baseHeight = pageWrap.height() - mainContent.height();
 
-function linkLoader(theEl){
+function linkLoader(theEl, bfunc, afunc){
   $(theEl).delegate("a", "click", function(e) {
     e.preventDefault();
     var _href = $(this).attr("href");
     history.pushState(null, null, _href);
-    loadContent(_href);
+    loadContent(_href, bfunc, afunc);
   });
 }
 
@@ -27,6 +27,16 @@ function loadContent(href, bfunc, afunc){
             mainContent.fadeIn(200, afunc);
          });
     });
+}
+
+function preload_about_images(){
+    console.log("Running the preload for about-us");
+    setTimeout(function(){
+        new Image().src = "/images/luke-mugshot.png";
+        new Image().src = "/images/paddy-mugshot.png";
+        new Image().src = "/images/martin-mugshot.png";
+        new Image().src = "/images/dotted-bracket.png";
+    }, 1000);
 }
 
 function isObjectEmpty(obj){
