@@ -32,7 +32,7 @@ html
     #fixed-nav
       i.fa.fa-angle-double-left#left-arrow
       a(href='/intro', onclick="linkLoader('#fixed-nav')")
-        i.fa.fa-circle
+        i.fa.fa-circle-o
       a(href='/about-us', onclick="linkLoader('#fixed-nav')")
         i.fa.fa-circle-o
       a(href='/why', onclick="linkLoader('#fixed-nav')")
@@ -56,3 +56,6 @@ html
     script(src="/javascripts/jquery.js")
     script(src="/javascripts/bootstrap.min.js")
     script(src="/javascripts/app.js")
+
+    script.
+      set_menu_icon(window.location.pathname);
