@@ -5,12 +5,10 @@ var express = require('express'),
 
 router.get('/', function (req, res) {
     res.render('submission-form', {message: '', errors: {} });
-    console.log("form is rendered");
 });
 
 
 router.post('/', function (req, res) {
-    console.log("got into post");
     req.assert('email', 'A valid email address is required').isEmail();
     var errors = req.validationErrors();
     //Nodemailer setup
@@ -31,7 +29,6 @@ router.post('/', function (req, res) {
     };
     
     if(!errors) {
-        console.log('No errors here my friend');
         transporter.sendMail(mailOpts, function (error, info){
             if(error) {
                 console.log(error);
@@ -40,18 +37,19 @@ router.post('/', function (req, res) {
                 console.log('Message sent: ' + info.response);
             }
             transporter.close();
-            res.render('form', {
+            res.render('submission-form', {
                 title: 'title', 
+                scripts: ['javascript/app.js'],
                 message: 'Message sent thanks for taking time filling out the form', 
                 errors: {}
             });
         });
     }
     else {
-        console.log("ERROR ERROR 3000");
-        res.render('form',
+        res.render('submission-form',
                   {title: 'title',
                   message: '',
+                  scripts: ['javascript/app.js'],
                   errors: errors});
     }
 });
