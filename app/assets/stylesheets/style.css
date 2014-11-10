@@ -356,8 +356,9 @@ h5 {
   max-width: 160px;
 }
 #xs-logo img {
-  max-height: 100px;
-  max-width: 100px;
+  margin-top: 30px;
+  max-height: 130px;
+  max-width: 130px;
   margin-left: auto;
   margin-right: auto;
 }
