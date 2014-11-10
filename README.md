@@ -9,6 +9,8 @@ We are making a service that will help skateboarders.
   - image preloading
   - fixed menu bar
   - form functionality
+  - fix martin shit quality photo
+  - vertically center all the text correctly
 
 ========================================================
 Getting started with the repository
