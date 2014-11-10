@@ -60,7 +60,9 @@ $(function() {
 
 /* gif ajax loads stuff */
 $(function() {
-    if(window.location.pathname === "/"){
+    var pathname = window.location.pathname;
+    if( pathname != "/"){$('#fixed-logo').removeClass("hidden");}
+    if(pathname === "/"){
         var fadeIn  = 1000;
         var fadeOut = 600;
         var frame1  = $('#frame1');
