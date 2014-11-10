@@ -60,36 +60,39 @@ $(function() {
 
 /* gif ajax loads stuff */
 $(function() {
-    var fadeIn  = 1000;
-    var fadeOut = 600;
-    var frame1  = $('#frame1');
-    
-    var logo  = $('#fixed-logo');
-    logo.addClass('hidden');
+    if(window.location.pathname === "/"){
+        var fadeIn  = 1000;
+        var fadeOut = 600;
+        var frame1  = $('#frame1');
+        
+        var logo  = $('#fixed-logo');
+        logo.hide();
+        logo.addClass('hidden');
 
-    frame1.fadeIn(fadeIn);
-    frame1.fadeOut(fadeOut, function(){
-        loadContent("/gif-part-two", function(){
-            var frame2 = $('#frame2');
-            frame2.fadeIn(fadeIn);
-            frame2.fadeOut(fadeOut, function(){
-                loadContent("/gif-part-three", function(){
-                    var frame3 = $('#frame3');
-                    frame3.fadeIn(fadeIn);
-                    frame3.fadeOut(fadeOut, function(){
-                        loadContent("/intro", 
-                            function(){
-                              $('#introduction').addClass('hidden');
-                            }, 
-                            function(){
-                            setTimeout(function(){
-                                $('#introduction').removeClass('hidden').hide().fadeIn(2000);
-                            }, fadeIn);
-                            logo.removeClass('hidden').hide().fadeIn(fadeIn);
-                       });
+        frame1.fadeIn(fadeIn);
+        frame1.fadeOut(fadeOut, function(){
+            loadContent("/gif-part-two", function(){
+                var frame2 = $('#frame2');
+                frame2.fadeIn(fadeIn);
+                frame2.fadeOut(fadeOut, function(){
+                    loadContent("/gif-part-three", function(){
+                        var frame3 = $('#frame3');
+                        frame3.fadeIn(fadeIn);
+                        frame3.fadeOut(fadeOut, function(){
+                            loadContent("/intro", 
+                                function(){
+                                  $('#introduction').addClass('hidden');
+                                }, 
+                                function(){
+                                setTimeout(function(){
+                                    $('#introduction').removeClass('hidden').hide().fadeIn(2000);
+                                }, fadeIn);
+                                logo.removeClass('hidden').hide().fadeIn(fadeIn);
+                           });
+                        });
                     });
                 });
             });
         });
-    });
+    }
 });
