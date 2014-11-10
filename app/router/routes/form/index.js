@@ -40,7 +40,7 @@ router.post('/', function (req, res) {
             res.render('submission-form', {
                 title: 'title', 
                 scripts: ['javascript/app.js'],
-                message: 'Message sent thanks for taking time filling out the form', 
+                message: 'Message sent, Thanks!', 
                 errors: {}
             });
         });

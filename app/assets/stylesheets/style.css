@@ -386,6 +386,7 @@ h5 {
   margin-top: 5%;
 }
 #errorMessage {
+  z-index: -10;
   color: #e81518;
   margin-top: 10px;
   font-weight: 200;
@@ -393,10 +394,13 @@ h5 {
   font-family: "Helvetica Neue Light";
 }
 #successMessage {
-  margin-left: 20%;
-  font-weight: 600;
-  font-family: "Helvetica Neue Light";
+  z-index: -10;
   color: #15e8a2;
+  margin-top: 10px;
+  font-weight: 200;
+  width: 200px;
+  margin-left: 3%;
+  font-family: "Helvetica Neue Light";
 }
 /* menu arrows */
 #right-arrow {

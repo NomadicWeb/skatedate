@@ -11,7 +11,6 @@ block content
 
   .col-md-10.col-md-offset-1#form-wrapper
     .col-md-8.col-md-offset-2.col-sm-8.col-sm-offset-2    
-      p#successMessage #{message}
       form#feedback(
         method="post"
         name="feedback"
@@ -40,3 +39,4 @@ block content
                 p= "Woops, we need: "
             -     each error in errors
                 li#errorMessage= error.msg
+            p#successMessage #{message}
