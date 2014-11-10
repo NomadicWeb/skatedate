@@ -6,7 +6,7 @@ We are making a service that will help skateboarders.
 ========================================================
 @todo
 ========================================================
-  - image preloading
+  - image preloading - DONE -
   - fixed menu bar
   - form functionality
   - fix martin shit quality photo
