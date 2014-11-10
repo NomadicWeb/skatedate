@@ -1,10 +1,24 @@
 normalize-css()
 
+.wheresbold
+  font-weight 900
+  font-family "Hiragino Kaku Gothic Standard"
+  font-size 20pt
+
+.wheres-bold-small
+  font-weight 900
+  font-family "Hiragino Kaku Gothic Standard"
+  font-size 13pt
+
 body *
   font-family: "Helvetica Neue Light"
   line-height 1.4em
   font-size 12pt
   // b()
+
+h1, h2, h3, h4, h5
+  margin-top: 0
+  margin-bottom 5px !important
 
 #wrapper
   margin-top 60px
@@ -32,11 +46,6 @@ body *
   line-height 1.4em
   font-size 16pt
   font-family: "Helvetica Neue Light"
-  
-#introduction span
-  font-weight 900
-  font-family "Hiragino Kaku Gothic Standard"
-  font-size 20pt
 
 /* about-us.jade */
 #mugshots div, #mugshots div h3, #mugshots div p
@@ -89,9 +98,22 @@ body *
   width      320px
   margin-top 80px
 
+#about-text #text a
+  color black
+  text-decoration none
+  font-size 13pt
+  border-bottom: dotted 0.5px black;
+
+#about-text #text a:hover
+  border-bottom-color #020405
+
 #about-text #text
   position relative
   right 70px
+
+#about-text #text h2
+  margin 0
+  margin-bottom 5px
 
 #dotted-bracket
   top 125px
