@@ -235,6 +235,9 @@ h5 {
   font-family: "Helvetica Neue Light";
 }
 /* about-us.jade */
+#about-wrapper {
+  margin-top: 5%;
+}
 #mugshots div,
 #mugshots div h3,
 #mugshots div p {
@@ -357,4 +360,11 @@ h5 {
 }
 #submit_button {
   margin-top: 10px;
+}
+/* general page layouts */
+#why-wrapper,
+#idea-wrapper,
+#problems-wrapper,
+#help-wrapper {
+  margin-top: 5%;
 }
