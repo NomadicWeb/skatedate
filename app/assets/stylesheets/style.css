@@ -387,8 +387,9 @@ h5 {
 }
 #errorMessage {
   color: #e81518;
+  margin-top: 10px;
   font-weight: 200;
-  margin-left: 27%;
+  margin-left: 3%;
   font-family: "Helvetica Neue Light";
 }
 #successMessage {

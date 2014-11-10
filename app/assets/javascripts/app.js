@@ -50,14 +50,6 @@ function loadContent(href, bfunc, afunc){
     });
 }
 
-function isObjectEmpty(obj){
-    var name;
-    for(name in obj){
-        return false;
-    }
-    return true
-}
-
 $(function() {
     var pathname = window.location.pathname;
     if( pathname != "/"){$('#fixed-logo').removeClass("hidden");}

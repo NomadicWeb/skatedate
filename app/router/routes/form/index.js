@@ -9,7 +9,7 @@ router.get('/', function (req, res) {
 
 
 router.post('/', function (req, res) {
-    req.assert('email', 'A valid email address is required').isEmail();
+    req.assert('email', 'A valid email address').isEmail();
     var errors = req.validationErrors();
     //Nodemailer setup
     var transporter = nodemailer.createTransport(smtpTransport({

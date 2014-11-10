@@ -11,11 +11,6 @@ block content
 
   .col-md-10.col-md-offset-1#form-wrapper
     .col-md-8.col-md-offset-2.col-sm-8.col-sm-offset-2    
-      -   if (isObjectEmpty(errors) == false)
-          #errorMessage
-            p= "The following errors occurred:"
-      -     each error in errors
-            li#errorMessage= error.msg
       p#successMessage #{message}
       form#feedback(
         method="post"
@@ -38,3 +33,10 @@ block content
           .col-md-6.col-md-offset-3
             input.btn.btn-default#submit_button(type ="submit" value="Send")
       
+        .row
+          .col-md-6.col-md-offset-3
+            -   if (isObjectEmpty(errors) == false)
+              #errorMessage
+                p= "Woops, we need: "
+            -     each error in errors
+                li#errorMessage= error.msg
