@@ -1,17 +1,24 @@
 extends layout
 
 block content
-  // - if(isObjectEmpty(errors) == false)
-  //   p.errorMessage= "The following errors occurred: "
-  //     ul
-  //       - each error in errors
-  //         li=error.msg
+  - function isObjectEmpty(obj){
+  -     var name;
+  -     for(name in obj){
+  -         return false;
+  -     }
+  -     return true;
+  - }
+  - if (isObjectEmpty(errors) == false)
+    p.errorMessage= "The following errors occurred"
+    ul
+      - each error in errors
+        li= error.msg
 
   .col-md-10.col-md-offset-1#form-wrapper
     .col-md-8.col-md-offset-2.col-sm-8.col-sm-offset-2
       form#feedback(
-        action="" method="post"  
-        name="feedback" 
+        method="post"
+        name="feedback"
         enctype="application/x-www-form-urlendcoded"
       )
         .row
