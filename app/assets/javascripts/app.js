@@ -20,15 +20,24 @@ function linkLoader(theEl){
   });
 }
 
-function set_menu_icon(pname){
-    //@todo
+function set_menu_icon(firstLoad){
+    $('#fixed-nav a i').on('click', function(el){
+        // remove full circle
+        $("#first-nav a i.fa-circle")
+            .removeClass('fa-circle')
+            .addClass('fa-circle-o');
+
+        // add new full circle
+        $("#fixed-nav a[href='"+ el.attr('href') +"']")[0]
+            .removeClass('fa-circle-o')
+            .addClass('fa-circle');
+    });
 }
 
 
 function loadContent(href, bfunc, afunc){
     mainContent.fadeOut(200, function(){
         mainContent.hide().load(href + " #switch-content", function(){
-            set_menu_icon(href);
             try{ bfunc(); }catch(err){}
             mainContent.fadeIn(200, afunc);
          });
@@ -36,8 +45,8 @@ function loadContent(href, bfunc, afunc){
 }
 
 $(function() {
+    var firstLoad = true;
     var pathname = window.location.pathname;
-    set_menu_icon(pathname);  // initial call to set the icon
 
     // in case we skip the animation
     if( pathname != "/"){
@@ -85,4 +94,12 @@ $(function() {
             });
         });
     }
+
+    if(firstLoad){
+        $('#fixed-nav a i')[0]
+            .removeClass('fa-circle-o')
+            .addClass('fa-circle');
+    }
+    firstLoad = false;
+    set_menu_icon();
 });
