@@ -183,21 +183,10 @@ td,
 th {
   padding: 0;
 }
-html * {
-  border: 1px solid;
-}
-.wheresbold {
-  font-weight: 900;
-  font-family: "Hiragino Kaku Gothic Standard";
-  font-size: 20pt;
-}
-.wheres-bold-small {
-  font-weight: 900;
-  font-family: "Hiragino Kaku Gothic Standard";
-  font-size: 13pt;
-}
-#switch-content * {
-  font-family: "Helvetica Neue Light" !important;
+p,
+a,
+li {
+  font-family: "Helvetica Neue Light";
   line-height: 1.4em;
   font-size: 12pt;
 }
@@ -209,6 +198,16 @@ h5 {
   font-family: "Helvetica Neue Medium" !important;
   margin-top: 0;
   margin-bottom: 5px !important;
+}
+.wheresbold {
+  font-weight: 900;
+  font-family: "Hiragino Kaku Gothic Standard";
+  font-size: 20pt;
+}
+.wheres-bold-small {
+  font-weight: 900;
+  font-family: "Hiragino Kaku Gothic Standard";
+  font-size: 13pt;
 }
 #wrapper {
   margin-top: 60px;
