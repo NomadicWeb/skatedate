@@ -141,21 +141,15 @@ body h1, h2, h3, h4, h5
 
 /* fixed menu */
 #fixed-xs-menu
+  width 172px
+  margin-left auto
+  margin-right auto
+
+#fixed-xs-menu
   z-index 10
 
 #fixed-nav a, #fixed-xs-menu a
   margin-left 5px
-
-@media (max-width: 600px)
-  #fixed-xs-menu
-    position relative
-    top  15px
-    left 15px
-
-@media (max-width: 768px)
-  #fixed-xs-menu
-    margin-top  15px
-    margin-left 30px
 
 #fixed-nav
   z-index  10
@@ -201,7 +195,7 @@ body h1, h2, h3, h4, h5
 #submit_button
   margin-top 10px
 
-@media (max-width: 600px)
+@media (min-width: 600px)
   #suggestion, #email
     width 90%
 
@@ -223,16 +217,3 @@ body h1, h2, h3, h4, h5
   font-weight 200
   width 200px
   margin-left 3%
-
-/* menu.jade*/
-@media (max-width: 600px)
-  #fixed-xs-menu
-    margin-left 30%
-  #fixed-xs-menu a
-    margin-left 5px
-
-@media (max-width: 320px)
-  #fixed-xs-menu
-    margin-left 6%
-  #fixed-xs-menu a
-    margin-left 5px
