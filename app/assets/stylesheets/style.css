@@ -183,6 +183,9 @@ td,
 th {
   padding: 0;
 }
+html * {
+  border: 1px solid;
+}
 p,
 a,
 li {
@@ -334,14 +337,27 @@ h5 {
   margin-right: auto;
 }
 /* fixed menu */
-#fixed-nav a {
+#fixed-nav a,
+#fixed-xs-menu a {
   margin-left: 5px;
+}
+@media (max-width: 600px) {
+  #fixed-xs-menu {
+    position: relative;
+    top: 15px;
+    left: 15px;
+  }
+}
+@media (max-width: 768px) {
+  #fixed-xs-menu {
+    margin-left: 8px;
+  }
 }
 #fixed-nav {
   z-index: 10;
   width: 180px;
   position: absolute;
-  left: 32px;
+  left: 25px;
   top: 165px;
   right: 0;
 }
@@ -403,13 +419,7 @@ h5 {
   width: 200px;
   margin-left: 3%;
 }
-/* menu arrows */
-#right-arrow {
-  margin-left: 5px;
-}
-#left-arrow {
-  margin-left: 5px;
-}
+/* menu.jade*/
 @media (max-width: 600px) {
   #fixed-xs-menu {
     margin-left: 30%;

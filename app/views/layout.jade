@@ -26,16 +26,17 @@ html
       #wrapper
         #switch-content
           block content
-        #xs-logo.hidden-sm.hidden-md.hidden-lg
-          .col-xs-10.col-xs-offset-1
-            #fixed-xs-menu
-              include menu.jade
+        #xs-logo.hidden-md.hidden-lg
+          .col-sm-8.col-sm-offset-2
+            .col-sm-6.col-sm-offset-3
+              #fixed-xs-menu
+                include menu.jade
           .col-xs-8.col-xs-offset-2
             img.img-responsive(src='/images/logo-plus-text2.png')
 
-    #fixed-nav.hidden-xs
+    #fixed-nav.hidden-xs.hidden-sm
       include menu.jade
-    #fixed-logo.hidden-xs.hidden
+    #fixed-logo.hidden-xs.hidden-sm.hidden
       a(href='/')
         img.img-responsive(src='/images/logo-plus-text2.png')
         
