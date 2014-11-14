@@ -21,14 +21,14 @@ function linkLoader(theEl){
 }
 
 function set_menu_icon(firstLoad){
-    $('#fixed-nav a i').on('click', function(el){
+    $('#fixed-nav a i').on('click', function(){
         // remove full circle
-        $("#first-nav a i.fa-circle")
+        $("#fixed-nav a i.fa-circle")
             .removeClass('fa-circle')
             .addClass('fa-circle-o');
 
         // add new full circle
-        $("#fixed-nav a[href='"+ el.attr('href') +"']")[0]
+        $(this)
             .removeClass('fa-circle-o')
             .addClass('fa-circle');
     });
@@ -45,7 +45,6 @@ function loadContent(href, bfunc, afunc){
 }
 
 $(function() {
-    var firstLoad = true;
     var pathname = window.location.pathname;
 
     // in case we skip the animation
@@ -95,11 +94,8 @@ $(function() {
         });
     }
 
-    if(firstLoad){
-        $('#fixed-nav a i')[0]
-            .removeClass('fa-circle-o')
-            .addClass('fa-circle');
-    }
-    firstLoad = false;
+    $("#fixed-nav a[href='"+window.location.pathname+"'] i")
+        .removeClass('fa-circle-o')
+        .addClass('fa-circle');
     set_menu_icon();
 });
