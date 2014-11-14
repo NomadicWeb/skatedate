@@ -1,4 +1,5 @@
 html {
+  font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -183,12 +184,11 @@ th {
   padding: 0;
 }
 body {
-  font-family: "Helvetica Neue", Helvetica, "Open Sans" !important;
+  font-family: "Arial, Helvetica, sans-serif" !important;
 }
 #switch-content p,
 #switch-content a,
 #switch-content li {
-  font-family: "Helvetica Neue Light";
   line-height: 1.4em;
   font-size: 12pt;
 }
@@ -197,17 +197,14 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: "Helvetica Neue Medium" !important;
   margin-top: 0;
   margin-bottom: 5px !important;
 }
 .wheresbold {
-  font-family: "Hiragino Kaku Gothic Standard" !important;
   font-weight: 900;
   font-size: 20pt;
 }
 .wheres-bold-small {
-  font-family: "Hiragino Kaku Gothic Standard" !important;
   font-weight: 900;
   font-size: 13pt;
 }
