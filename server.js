@@ -1,11 +1,11 @@
 // ====================================================
 // Global Variables
 // ====================================================
-var express    = require('express'),
-    livereload = require('express-livereload'),
-    app        = express(),
+var express          = require('express'),
+    //livereload     = require('express-livereload'),
+    app              = express(),
     expressValidator = require('express-validator'),
-    logger     = require('express-logger');
+    logger           = require('express-logger');
 
 
 // ====================================================
@@ -44,7 +44,7 @@ module.exports = app;
 // ====================================================
 // SERVER
 // ====================================================
-livereload(app, {watchDir: process.cwd() + "/app/"});
+//livereload(app, {watchDir: process.cwd() + "/app/"});
 var port = process.env.PORT || 5000;
 app.listen(port, function(){
       console.log('Listening on ' + port);

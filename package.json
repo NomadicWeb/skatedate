@@ -28,7 +28,6 @@
     "gulp": "3.8.8",
     "gulp-stylus": "^1.3.3",
     "stylus": "0.49.2",
-    "express-livereload": "0.0.24",
     "nodemailer": "1.3.0",
     "nodemailer-smtp-transport": "0.1.13",
     "jade": "1.7.0",
