@@ -10,11 +10,13 @@ normalize-css()
   font-family "Hiragino Kaku Gothic Standard"
   font-size 13pt
 
+body *
+  //b()
+
 body p, span, a
   font-family: "Helvetica Neue Light" !important
   line-height 1.4em
   font-size 12pt
-  //b()
 
 body h1, h2, h3, h4, h5
   font-family: "Helvetica Neue Medium" !important
@@ -31,14 +33,13 @@ body h1, h2, h3, h4, h5
     margin-top 40%
 
 /* gif-part-*.jade */
-#frame1, #frame2, #frame3
+#frame1, #frame3
+  margin-top 60px
   display none
 
-#frame2 img
-  margin-left 30px
-
-#frame3 img
-  margin-left 100px
+#frame2
+  margin-top 30px
+  display none
 
 /* introduction.jade */
 @media (min-width: 1024px)

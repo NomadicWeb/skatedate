@@ -219,15 +219,13 @@ h5 {
 }
 /* gif-part-*.jade */
 #frame1,
-#frame2,
 #frame3 {
+  margin-top: 60px;
   display: none;
 }
-#frame2 img {
-  margin-left: 30px;
-}
-#frame3 img {
-  margin-left: 100px;
+#frame2 {
+  margin-top: 30px;
+  display: none;
 }
 /* introduction.jade */
 @media (min-width: 1024px) {
