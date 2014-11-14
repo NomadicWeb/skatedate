@@ -27,11 +27,11 @@ function set_menu_icon(pname){
             .addClass('fa-circle-o');
     }
 
-    var others = $("#fixed-nav a i");
+    var others = $("#fixed-nav a i, #fixed-xs-menu a i");
     for(var i = 0; i < others.length-1; i++){
         $(others[i]).removeClass('fa-circle').addClass('fa-circle-o');
     }
-    var item = $("#fixed-nav a[href='"+ pname + "'] i");
+    var item = $("#fixed-nav a[href='"+ pname + "'] i, #fixed-xs-menu a[href='"+ pname + "'] i");
     item.removeClass('fa-circle-o').addClass('fa-circle');
 }
 
