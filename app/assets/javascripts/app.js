@@ -21,30 +21,25 @@ function linkLoader(theEl){
 }
 
 function set_menu_icon(pname){
-    if(pname === "/"){
-        $("#fixed-nav a[href='/intro'] i").removeClass('fa-circle-o').addClass('fa-circle');
-    }else{
-        if(pname != "/form"){
-            $("#fixed-nav a[href='/form'] i").removeClass('fa-circle').addClass('fa-circle-o');
-        }        
-
-        // set the 'fill' class
-        var item = $("#fixed-nav a[href='"+ pname + "'] i");
-        item.removeClass('fa-circle-o').addClass('fa-circle');
-
-        // remove 'fill' class from the others
-        var others = $("#fixed-nav a[href!='"+ pname + "'] i");
-        for(var i = 0; i < others.length-1; i++){
-            $(others[i]).removeClass('fa-circle').addClass('fa-circle-o');
-        }
+    if(pname != "/form"){
+        $("#fixed-nav a[href='/form'] i")
+            .removeClass('fa-circle')
+            .addClass('fa-circle-o');
     }
+
+    var others = $("#fixed-nav a i");
+    for(var i = 0; i < others.length-1; i++){
+        $(others[i]).removeClass('fa-circle').addClass('fa-circle-o');
+    }
+    var item = $("#fixed-nav a[href='"+ pname + "'] i");
+    item.removeClass('fa-circle-o').addClass('fa-circle');
 }
 
 function loadContent(href, bfunc, afunc){
     mainContent.fadeOut(200, function(){
         mainContent.hide().load(href + " #switch-content", function(){
+            set_menu_icon(href);
             try{ bfunc(); }catch(err){}
-            set_menu_icon(window.location.pathname);
             mainContent.fadeIn(200, afunc);
          });
     });
@@ -52,6 +47,7 @@ function loadContent(href, bfunc, afunc){
 
 $(function() {
     var pathname = window.location.pathname;
+    set_menu_icon(pathname);
     if( pathname != "/"){$('#fixed-logo').removeClass("hidden");}
     if(pathname === "/"){
         var fadeIn  = 1000;
