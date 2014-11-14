@@ -94,8 +94,15 @@ $(function() {
         });
     }
 
-    $("#fixed-nav a[href='"+window.location.pathname+"'] i")
-        .removeClass('fa-circle-o')
-        .addClass('fa-circle');
+    var pname = window.location.pathname;
+    if(pname != "/"){
+        $("#fixed-nav a[href='"+pname+"'] i")
+            .removeClass('fa-circle-o')
+            .addClass('fa-circle');
+    }else{
+        $("#fixed-nav a i:first")
+            .removeClass('fa-circle-o')
+            .addClass('fa-circle');
+    }
     set_menu_icon();
 });
