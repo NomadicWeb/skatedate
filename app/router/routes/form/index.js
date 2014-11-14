@@ -16,14 +16,14 @@ router.post('/', function (req, res) {
         service: 'Gmail',
         debug: true,
         auth: { 
-            user: ENV["SMTP_USER"],
-            pass: ENV["SMTP_PASS"]
+            user: ENV['SMTP_USER'],
+            pass: ENV['SMTP_PASS']
         }
     }));
     console.log('smtp configured');
     //Mail Options
     var mailOpts = {
-        to: ENV["SMTP_USER"],
+        to: ENV['SMTP_USER'],
         subject: 'Suggestions',
         text: 'email: ' + req.body.email + '\n' + '\n'+ 'Suggestion: ' + req.body.suggestion
     };
