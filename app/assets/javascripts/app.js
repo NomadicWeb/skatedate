@@ -37,8 +37,14 @@ function loadContent(href, bfunc, afunc){
 
 $(function() {
     var pathname = window.location.pathname;
-    set_menu_icon(pathname);
-    if( pathname != "/"){$('#fixed-logo').removeClass("hidden");}
+    set_menu_icon(pathname);  // initial call to set the icon
+
+    // in case we skip the animation
+    if( pathname != "/"){
+        $('#fixed-logo').removeClass("hidden");
+        $('#fixed-nav').removeClass("hidden");
+    }
+
     if(pathname === "/"){
         var fadeIn  = 1000;
         var fadeOut = 600;
